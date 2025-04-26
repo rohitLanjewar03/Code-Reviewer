@@ -20,7 +20,7 @@ function App(){
   const [review, setReview] = useState("");
 
   async function reviewCode(){
-    const response = await axios.post("http://localhost:3000/ai/get-review", {code: code})
+    const response = await axios.post(`${import.meta.env.VITE_API_URL}/ai/get-review`, {code: code})
     console.log(response.data)
     setReview(response.data)
   }
